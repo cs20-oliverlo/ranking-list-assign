@@ -2,6 +2,7 @@
 
 // HTML Variables
 let outputEl = document.getElementById("output");
+let arrayList = [];
 
 // Button Event Listener
 document.getElementById("btn").addEventListener("click", btnClicked);
@@ -29,6 +30,15 @@ function btnClicked() {
 // Menu Option Functions
 function addItem() {
   console.log("Add Item");
+  
+  let addNewItem = prompt("Enter Item:");
+  arrayList.push(addNewItem);
+
+  outputEl.innerHTML = ``;
+
+  for (let i = 0; i < arrayList.length; i++) {
+    outputEl.innerHTML += `<div>${i + 1}: ${arrayList[i]}</div>`;
+  }
 }
 
 function removeLast() {
